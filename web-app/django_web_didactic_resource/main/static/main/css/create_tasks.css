@@ -1,0 +1,222 @@
+#header{
+    display: flex;
+    height: 80px;
+    width: 1260px;
+    background-color: #37B6CE;
+    border-radius: 10px;
+    font-weight: bold;
+}
+
+#logo{
+    margin: 10px 15px;
+}
+
+#header_icon_title{
+    font-size: 20px;
+    margin-top: 10px;
+}
+
+#main_title{
+    color:whitesmoke;
+    margin: 20px 0px 0px 200px;
+    width: 70px;
+    height: 50px;
+    text-align: center;
+}
+.header_words{
+    color: #fff;
+    text-decoration: none;
+}
+
+#create_tasks{
+    color:whitesmoke;
+    margin: 20px 0px 0px 200px;
+    width: 90px;
+    height: 50px;
+    text-align: center;
+}
+
+#all_tasks{
+    color:whitesmoke;
+    margin: 20px 0px 0px 150px;
+    width: 70px;
+    height: 50px;
+    text-align: center;
+}
+
+#cabinet{
+    color:whitesmoke;
+    margin: 20px 0px 0px 150px;
+    width: 70px;
+    height: 50px;
+    text-align: center;
+}
+
+#white_background{
+    background-color: white;
+}
+
+#main_field{
+    background-color: #37B6CE;
+    margin: 55px 100px;
+    width: 900 px;
+    border-radius: 50px;
+}
+
+
+#num_of_task_options{
+    padding: 50px 0px 0px 130px;
+}
+
+#task_options_area {
+    background-color: #468D9B;
+    color: white;
+    margin-left: 30px;
+    height: 25px;
+    width: 20px;
+    border-radius: 5px;
+    border-color: #468D9B ;
+}
+
+
+#form_FIO{
+    padding: 35px 0px 0px 130px;
+}
+
+#input_FIO_area{
+    background-color: #468D9B;
+    color: white;
+    margin-left: 30px;
+    height: 25px;
+    width: 500px;
+    border-radius: 5px;
+    border-color: #468D9B ;
+}
+
+input[type="text"]::-webkit-input-placeholder {
+    color: #ccc;
+    text-align: center;
+   }
+input[type="text"]::-moz-placeholder {
+    color: #ccc;
+    text-align: center;
+   }
+
+#choose_theme{
+    display: flex;
+    justify-content: space-around;
+    padding: 35px 0px 0px 26px;
+}
+/*Не забудь поменять цвет как нбудь на дропбокс*/
+#choose_name_dropbox{
+    margin-left: 135px;
+    height: 25px;
+    width: 150px;
+}
+
+#count_tasks_1, #count_tasks_2, #count_tasks_3, #count_tasks_4{
+    padding-top:10px;
+}
+
+.label_count_tasks{
+    margin-right: 50px ;
+}
+
+#input_count_tasks_1,#input_count_tasks_2, #input_count_tasks_3, #input_count_tasks_4 {
+    background-color: #468D9B;
+    color: white;
+    margin-left: 30px;
+    height: 25px;
+    width: 20px;
+    border-radius: 5px;
+    border-color: #468D9B ;
+}
+
+select option{
+    background-color: #37B6CE !important;
+
+}
+select{
+    background-color: #468D9B;
+}
+
+select option[value1] {
+    background-color: #37B6CE;
+  }
+option:not(:checked) {
+    background-color: #37B6CE;
+  }
+
+
+  /*--------------- Button Add -------------------*/
+
+ #button__add-topic-Two,  #button__add-topic-Three,
+ #button__add-topic-Four {
+    display: none;
+    padding-left: 140px;
+    padding-top: 25px;
+  }
+
+  #button__add-topic-One {
+    padding-left: 140px;
+    padding-top: 25px;
+  }
+
+  #button__add-topic-One button, #button__add-topic-Two button,
+  #button__add-topic-Three button, #button__add-topic-Four button {
+    padding: 10px;
+    background-color: #F4BA64;
+    border-radius: 5px;
+    border-color: #F4BA64;
+  }
+
+  #button__add-topic-One img, #button__add-topic-Two img,
+  #button__add-topic-Three img, #button__add-topic-Four img{
+    padding-right: 10px;
+    border-radius: 10%;
+  }
+
+   /*--------------- Button Delete -------------------*/
+
+   #button__delete-topic-Two, #button__delete-topic-Three, #button__delete-topic-Four {
+      display: none;
+      padding-left: 140px;
+      padding-top: 25px;
+    }
+
+    #button__delete-topic-Two button,
+    #button__delete-topic-Three button, #button__delete-topic-Four button {
+      padding: 10px;
+      background-color: #F4BA64;
+      border-radius: 5px;
+      border-color: #F4BA64;
+    }
+
+    /*--------------- Button Print -------------------*/
+
+   #button__print {
+    padding-left: 140px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+  }
+
+  #button__print button{
+    padding: 10px;
+    background-color: #F4BA64;
+    border-radius: 5px;
+    border-color: #F4BA64;
+  }
+
+  #button__print{
+    padding-right: 10px;
+    border-radius: 10%;
+  }
+
+
+  /*--------------------- Choose theme -----------------*/
+
+  #choose_theme_two, #choose_theme_three, #choose_theme_four {
+    display: none;
+    justify-content: space-around;
+    padding: 35px 0px 0px 26px;
+  }

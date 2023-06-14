@@ -1,0 +1,181 @@
+#header{
+    display: flex;
+    height: 80px;
+    width: 1260px;
+    background-color: #37B6CE;
+    border-radius: 10px;
+    font-weight: bold;
+}
+
+#logo{
+    margin: 10px 15px;
+}
+
+#header_icon_title{
+    font-size: 20px;
+    margin-top: 10px;
+}
+
+#main_title{
+    color:whitesmoke;
+    margin: 20px 0px 0px 200px;
+    width: 70px;
+    height: 50px;
+    text-align: center;
+}
+.header_words{
+    color: #fff;
+    text-decoration: none;
+}
+
+#create_tasks{
+    color:whitesmoke;
+    margin: 20px 0px 0px 200px;
+    width: 90px;
+    height: 50px;
+    text-align: center;
+}
+
+#all_tasks{
+    color:whitesmoke;
+    margin: 20px 0px 0px 150px;
+    width: 70px;
+    height: 50px;
+    text-align: center;
+}
+
+#cabinet{
+    color:whitesmoke;
+    margin: 20px 0px 0px 150px;
+    width: 70px;
+    height: 50px;
+    text-align: center;
+}
+
+#white_background{
+    background-color: white;
+}
+
+#main_field{
+    background-color: #37B6CE;
+    margin: 55px 100px;
+    width: 900 px;
+    border-radius: 50px;
+}
+
+
+input[type="text"]::-webkit-input-placeholder {
+    color: #ccc;
+    text-align: center;
+   }
+input[type="text"]::-moz-placeholder {
+    color: #ccc;
+    text-align: center;
+   }
+
+#choose_theme{
+    display: flex;
+    justify-content: space-around;
+    padding: 35px 0px 0px 26px;
+}
+/*Не забудь поменять цвет как нбудь на дропбокс*/
+#choose_name_dropbox{
+    margin-left: 135px;
+    height: 25px;
+    width: 150px;
+}
+
+#count_tasks_1{
+    padding-top:10px;
+}
+
+.label_count_tasks{
+    margin-right: 50px ;
+}
+
+#input_count_tasks_1 {
+    background-color: #468D9B;
+    color: white;
+    margin-left: 30px;
+    height: 25px;
+    width: 20px;
+    border-radius: 5px;
+    border-color: #468D9B ;
+}
+
+select option{
+    background-color: #37B6CE !important;
+
+}
+select{
+    background-color: #468D9B;
+    font-size: 17px;
+}
+
+select option[value1] {
+    background-color: #37B6CE;
+  }
+option:not(:checked) {
+    background-color: #37B6CE;
+  }
+
+
+
+
+
+    /*--------------- Button Print -------------------*/
+
+   #button__print {
+    padding-left: 140px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+  }
+
+  #button__print button{
+    padding: 10px;
+    background-color: #F4BA64;
+    border-radius: 5px;
+    border-color: #F4BA64;
+  }
+
+  #button__print{
+    padding-right: 10px;
+    border-radius: 10%;
+  }
+
+  #butt_generate{
+    background-color: #F4BA64;
+    border-radius: 5px;
+    border-color: #F4BA64;
+    font-size: 17px;
+  }
+
+.theme{
+    font-size: 23px;
+}
+
+#gener_task{
+    padding:50px 150px;
+    font-size: 25px;
+    }
+
+#answer{
+    display: flex;
+    padding:50px 300px;
+    font-size: 20px;
+}
+
+ #check_answer{
+    background-color: #F4BA64;
+    border-radius: 5px;
+    border-color: #F4BA64;
+    font-size: 20px;
+  }
+
+ #input_answ{
+    font-size: 20px;
+ }
+
+ #snail{
+    text-color: red;
+ }

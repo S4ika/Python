@@ -1,0 +1,71 @@
+html {
+	overflow-y: scroll;
+}
+
+body {
+  background:#ffff;
+  font-family: 'Titillium Web', sans-serif;
+}
+
+.form {
+  background:#37B6CE;
+  padding: 40px;
+  max-width:400px;
+  margin:50px auto;
+  border-radius:4px;
+  box-shadow:0 4px 10px 4px #F4BA64;
+}
+
+.field-wrap {
+  position:relative;
+  margin-bottom:30px;
+}
+
+h1{
+    padding-left: 100px;
+}
+
+#label_login{
+    padding: 0px 45px;
+}
+
+#label_name{
+    padding: 0px 52px;
+}
+
+#label_surname{
+    padding: 0px 34px;
+}
+
+#label_email{
+    padding: 0px 47px;
+}
+
+#label_pas{
+    padding: 0px 40px;
+}
+
+.button {
+  border:0;
+  outline:none;
+  border-radius:0;
+  margin: 0px 100px;
+  padding:15px 0;
+  font-size:12px;
+  font-weight:$bold;
+  text-transform:uppercase;
+  letter-spacing:.1em;
+  background:#F4BA64;
+  color:$white;
+  transition:all.5s ease;
+  -webkit-appearance: none;
+  border-radius:10px;
+  &:hover, &:focus {
+    background:$main-dark;
+  }
+}
+
+.button-block {
+  display:block;
+  width:50%;
+}

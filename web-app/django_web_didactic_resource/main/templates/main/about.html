@@ -1,0 +1,20 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>О нас</title>
+    <link rel="stylesheet" href="{% static 'main/css/about_style.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bad+Script&family=Indie+Flower&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div id = "area">
+    <h1>О нас</h1>
+    <h2>Данный веб-сервис создан во время подготовки к выпускной квалификационной работе.</h2>
+    <p>Написан студентом 4 курса КубГУ ФКТиПМ Саенко Ильей</p>
+    <div id = "back"><a href="{% url 'home' %}" class = "header_words">Вернуться на главную</a></div>
+  </div>
+</body>
+</html>

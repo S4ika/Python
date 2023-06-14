@@ -1,0 +1,77 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Регистрация</title>
+  <link rel="stylesheet" href="{% static 'users/css/reg.css' %}">
+</head>
+<body>
+    <div class="form">
+      <div class="tab-content">
+        <div id="signup">
+          <h1>Регистрация</h1>
+          <form action="/" method="post">
+          <div class="top-row">
+            <div class="field-wrap">
+              <label id = "label_login">
+                Логин<span class="req">*</span>
+              </label>
+              <input type="text" required autocomplete="off"  />
+            </div>
+            <div class="field-wrap">
+              <label id = "label_name">
+                Имя<span class="req">*</span>
+              </label>
+              <input type="text" required autocomplete="off"  />
+            </div>
+
+            <div class="field-wrap">
+              <label id = "label_surname">
+                Фамилия<span class="req">*</span>
+              </label>
+              <input type="text"required autocomplete="off"/>
+            </div>
+          </div>
+
+          <div class="field-wrap">
+            <label id = "label_email">
+              Email<span class="req">*</span>
+            </label>
+            <input type="email"required autocomplete="off"/>
+          </div>
+
+          <div class="field-wrap">
+            <style>
+               .invalid { border-color: red; }
+               #error { color: red }
+               .check {}
+            </style>
+            <label id = "label_pas">
+              Пароль<span class="req">*</span>
+            </label>
+            <input type="password"required autocomplete="off" id='pass_word'/>
+                <script>
+                        pass_word.onblur = function() {
+                          let reg = new RegExp(/^[a-zA-Z0-9]{8,}$/);
+                          if (reg.test(pass_word.value) == false) {
+                            pass_word.classList.add('invalid');
+                            field-wrap.classList.add('check');
+                          }
+                        };
+                        pass_word.onfocus = function() {
+                          if (this.classList.contains('invalid')) {
+                            this.classList.remove('invalid');
+                          }
+                        };
+                </script>
+          </div>
+
+
+          <button type="submit" class="button button-block"/>Зарегистрироваться</button>
+          </form>
+        </div> <!-- /form -->
+        </div>
+      </div>
+</body>
+</html>

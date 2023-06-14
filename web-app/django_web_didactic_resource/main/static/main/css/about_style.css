@@ -1,0 +1,36 @@
+#area{
+    weight: 400px;
+    height: 350px;
+    margin: 150px 100px 0px 100px;
+    background-color: #37B6CE;
+    border-radius: 70px;
+}
+
+#area h1{
+    margin-left: 450px;
+    font-family: 'Bad Script', cursive;
+}
+
+#area h2{
+    margin-left: 100px;
+    font-size:25px;
+    font-family: 'Bad Script', cursive;
+}
+
+#area p{
+    margin-left: 250px;
+    font-size:20px;
+    font-family: 'Bad Script', cursive;
+}
+#back{
+    border-radius: 30px;
+    margin: 50px 350px 0px 300px;
+    background-color: #F4BA64;
+}
+.header_words{
+    color: #whitesmoke;
+    text-decoration: none;
+    font-size:20px;
+    font-family: 'Bad Script', cursive;
+    margin: 0px 0px 0px 125px;
+}

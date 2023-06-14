@@ -1,0 +1,64 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Главная страница</title>
+    <link rel="stylesheet" href="{% static 'main/css/main_style.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id = "header">
+        <div id = "logo"><img src="{% static 'main/img/children.png' %}" width="50" height="50" alt="Иконка детей"></div>
+        <div id = "header_icon_title"><p>Генератор заданий</p></div>
+        <div id = "main_title"><a href="{% url 'home' %}" class = "header_words">Главная страница</a></div>
+        <div id = "about"><a href="{% url 'about' %}" class = "header_words">О нас</a></div>
+        <div id = "cabinet"><a href="{% url 'auth' %}" class = "header_words">Войти</a></div>
+    </div>
+    <div class="services_section layout_padding">
+        <div class="container">
+           <h1 class="services_taital">Дидактический веб-ресурс для решения задач по физике </h1>
+           <div class="services_section_2">
+              <div class="news_main">
+                 <div class="news_section_left">
+                        <div class ="background_circle_color">
+                            <div class="image_2"><img src="{% static 'main/img/img.png' %}" height="75px;" weight = "75px;" class = "img"></div>
+                        </div>
+                    </div>
+                 <div class="news_section_right">
+                    <h1 class="great_text_1">Возможности для преподавателей</h1>
+                    <p class="dolor_text">
+                        <ul>
+                            <li>Генерация наборов заданий на основе шаблонов</li>
+                            <li>Генерация индивидуальных заданий на основе шаблонов</li>
+                            <li>Добавление новых шаблонов для генерации заданий</li>
+                            <li>Добавление объектов для заданий</li>
+                          </ul>
+                    </p>
+                 </div>
+              </div>
+              <div class="news_main">
+                <div class="news_section_left">
+                       <div class ="background_circle_color">
+                           <div class="image_2"><img src="{% static 'main/img/student.png' %}" height="75px;" weight = "75px;" class = "img"></div>
+                       </div>
+                   </div>
+                <div class="news_section_right">
+                   <h1 class="great_text_2">Возможности для студентов</h1>
+                   <p class="dolor_text">
+                        <ul>
+                            <li>Решение сгенерированных задач</li>
+                            <li>Проверка решения</li>
+                            <li>Если задача решена не правильно, то можно узнать используемые формулы для правильного решения</li>
+                        </ul>
+                   </p>
+                </div>
+           </div>
+        </div>
+     </div>
+</body>
+</html>

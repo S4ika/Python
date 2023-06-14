@@ -1,0 +1,200 @@
+<!DOCTYPE HTML>
+<html lang="ru"><head>
+<meta charset="UTF-8">
+<title>Отправка формы на AJAX</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<!--<script src="assets/js/jquery.min.js"></script>-->
+</head><body>
+
+
+<form id="my_form" name = "ourForm">
+	<div class="mar10-tb"><label>Имя: <input name="name"></label></div>
+	<div class="mar10-tb"><label>Телефон: <input name="phone"></label></div>
+	<div><button id = "my_button" type="submit">Отправить</button></div>
+</form>
+
+<div id="my_message"></div>
+
+</body></html>
+<script>
+$(document).ready(function() {
+    $("#my_button").click(function(e) {
+    	e.preventDefault();
+        $.ajax({
+            url: "{% url "my_view" %}}",
+            method: 'post',
+            dataType: 'json',
+            success: function(data) {
+                // Обработка полученных данных
+                alert(data);
+            }
+            error: function(response) {
+              alert("Пиздос");
+            }
+            complete: function() {
+        	// и по завершении запроса (удачном или нет)
+        		alert("Я закончил!");
+    		}
+            }
+        });
+    });
+});
+<!--1-->
+
+<!--	var servResponse = document.querySelector('#my_message');-->
+
+<!--	document.forms.ourForm.onsubmit = function(e){-->
+<!--		e.preventDefault();-->
+
+<!--		var userName = document.forms.ourForm.name.value;-->
+<!--		userName = encodeURIComponent(userName);-->
+<!--		var userPhone = document.forms.ourForm.phone.value;-->
+<!--		userPhone = encodeURIComponent(userPhone);-->
+
+<!--		var xhr = new XMLHttpRequest();-->
+
+<!--		xhr.open('POST', '/my_view/' + 'name=' + userName + '&phone=' + userPhone);-->
+
+<!--		xhr.setRequestHeader('Content-Type',-->
+<!--		'application/x-www-form-urlencoded');-->
+
+<!--		xhr.onreadystatechange = function(){-->
+<!--			if (xhr.readyState === 4 && xhr.status === 200){-->
+<!--				servResponse.textContent = xhr.responseText;-->
+<!--			}-->
+<!--		}-->
+
+<!--		xhr.send('name=' + userName + '&phone=' + userPhone);-->
+<!--	};-->
+
+<!--2-->
+
+<!--	$('#my_form').submit(function(){-->
+
+<!--	alert('Нажата submit-кнопка');-->
+
+<!--	return false;-->
+<!--});-->
+</script>
+
+<!--{% load static %}-->
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <title>Создать набор задач</title>-->
+<!--    <link rel="stylesheet" href="{% static 'main/css/create_tasks.css' %}">-->
+<!--    <script src="{% static 'main/js/main_js.js'%}"></script>-->
+<!--    <script src="{% static 'main/js/jquery-3.7.0.js'%}"></script>-->
+<!--&lt;!&ndash;    <script>&ndash;&gt;-->
+<!--&lt;!&ndash;        function viewDivTwo(){&ndash;&gt;-->
+<!--&lt;!&ndash;            document.getElementById("choose_theme_two").style.display = "flex";&ndash;&gt;-->
+<!--&lt;!&ndash;            document.getElementById("button__add-topic-One").style.display = "none";&ndash;&gt;-->
+<!--&lt;!&ndash;            document.getElementById("button__add-topic-Two").style.display = "block";&ndash;&gt;-->
+
+<!--&lt;!&ndash;            document.getElementById("button__delete-topic-Two").style.display = "block";&ndash;&gt;-->
+<!--&lt;!&ndash;          };&ndash;&gt;-->
+<!--&lt;!&ndash;          function viewDivThree(){&ndash;&gt;-->
+<!--&lt;!&ndash;            document.getElementById("choose_theme_three").style.display = "flex";&ndash;&gt;-->
+<!--&lt;!&ndash;            document.getElementById("button__add-topic-Two").style.display = "none";&ndash;&gt;-->
+<!--&lt;!&ndash;            document.getElementById("button__add-topic-Three").style.display = 'block';&ndash;&gt;-->
+
+<!--&lt;!&ndash;            document.getElementById("button__delete-topic-Two").style.display = 'none';&ndash;&gt;-->
+<!--&lt;!&ndash;            document.getElementById("button__delete-topic-Three").style.display = 'block';&ndash;&gt;-->
+<!--&lt;!&ndash;          };&ndash;&gt;-->
+<!--&lt;!&ndash;          function viewDivFour(){&ndash;&gt;-->
+<!--&lt;!&ndash;            document.getElementById("choose_theme_four").style.display = "flex";&ndash;&gt;-->
+<!--&lt;!&ndash;            document.getElementById("button__add-topic-Three").style.display = "none";&ndash;&gt;-->
+
+
+<!--&lt;!&ndash;            document.getElementById("button__delete-topic-Three").style.display = "none";&ndash;&gt;-->
+<!--&lt;!&ndash;            document.getElementById("button__delete-topic-Four").style.display = "block";&ndash;&gt;-->
+<!--&lt;!&ndash;          };&ndash;&gt;-->
+
+
+
+
+<!--&lt;!&ndash;          function viewDeleteTwo(){&ndash;&gt;-->
+<!--&lt;!&ndash;            document.getElementById("choose_theme_two").style.display = "none";&ndash;&gt;-->
+<!--&lt;!&ndash;            document.getElementById("button__add-topic-Three").style.display = "none";&ndash;&gt;-->
+<!--&lt;!&ndash;            document.getElementById("button__add-topic-One").style.display = "block";&ndash;&gt;-->
+<!--&lt;!&ndash;            document.getElementById("button__add-topic-Two").style.display = "none";&ndash;&gt;-->
+
+<!--&lt;!&ndash;            document.getElementById("button__delete-topic-Two").style.display = 'none';&ndash;&gt;-->
+<!--&lt;!&ndash;          };&ndash;&gt;-->
+
+<!--&lt;!&ndash;          function viewDeleteThree(){&ndash;&gt;-->
+<!--&lt;!&ndash;            document.getElementById("choose_theme_three").style.display = "none";&ndash;&gt;-->
+<!--&lt;!&ndash;            document.getElementById("button__add-topic-Three").style.display = "none";&ndash;&gt;-->
+<!--&lt;!&ndash;            document.getElementById("button__delete-topic-Three").style.display = 'none';&ndash;&gt;-->
+
+<!--&lt;!&ndash;            document.getElementById("button__add-topic-Two").style.display = "block";&ndash;&gt;-->
+<!--&lt;!&ndash;            document.getElementById("button__delete-topic-Two").style.display = 'block';&ndash;&gt;-->
+<!--&lt;!&ndash;          };&ndash;&gt;-->
+
+<!--&lt;!&ndash;          function viewDeleteFour(){&ndash;&gt;-->
+<!--&lt;!&ndash;            document.getElementById("choose_theme_four").style.display = "none";&ndash;&gt;-->
+<!--&lt;!&ndash;            document.getElementById("button__delete-topic-Four").style.display = 'none';&ndash;&gt;-->
+
+<!--&lt;!&ndash;            document.getElementById("button__add-topic-Three").style.display = "block";&ndash;&gt;-->
+<!--&lt;!&ndash;            document.getElementById("button__delete-topic-Three").style.display = 'block';&ndash;&gt;-->
+<!--&lt;!&ndash;          };&ndash;&gt;-->
+<!--&lt;!&ndash;    </script>&ndash;&gt;-->
+<!--</head>-->
+<!--<body>-->
+<!--    <div id = "header">-->
+<!--            <div id = "logo"><img src="{% static 'main/img/img.png' %}" width="50" height="50" alt="Иконка учителя"></div>-->
+<!--            <div id = "header_icon_title"><p>Учительская</p></div>-->
+<!--            <div id = "main_title"><a href="{% url 'home' %}" class = "header_words">Главная страница</a></div>-->
+<!--            <div id = "create_tasks"><a href="{% url 'create_tasks' %}" class = "header_words">Создать набор задач</a></div>-->
+<!--            <div id = "all_tasks"><a href="{% url 'all_tasks' %}" class = "header_words">Все задачи</a></div>-->
+<!--            <div id = "cabinet"><a href="{% url 'account' %}" class = "header_words">Личный кабинет</a></div>-->
+<!--    </div>-->
+<!--    <div id = "white_background">-->
+<!--        <div id = "main_field">-->
+<!--            <div id = "form_task_options">-->
+<!--                <form id = "num_of_task_options" action="/header" method="post">-->
+<!--&lt;!&ndash;                    {% csrf_token %}>&ndash;&gt;-->
+<!--                    <label>-->
+<!--                        Введите количество вариантов-->
+<!--                        <input type="text" id = "task_options_area">-->
+<!--                    </label>-->
+<!--                </form>-->
+<!--            </div>-->
+<!--            <div id = "form_FIO">-->
+<!--                <form id = "input_FIO">-->
+<!--                    <label>-->
+<!--                        Введите ФИО ученика-->
+<!--                        <input type="text" id = "input_FIO_area" placeholder="Это поле может быть пустым">-->
+<!--                    </label>-->
+<!--                    </label>-->
+<!--                </form>-->
+<!--            </div>-->
+
+<!--            <div class="theme_one">-->
+<!--                <div id = "choose_theme">-->
+<!--                    <p class = "theme">Тема</p>-->
+<!--                    <select name="choose_theme_dropbox" id = "1_dropbox">-->
+<!--                      <option value="Давление"selected>Давление</option>-->
+<!--                      <option value="Мощность" >Мощность</option>-->
+<!--                      <option value="Кинематика">Кинематика</option>-->
+<!--                      <option value="Электродинамика">Электродинамика</option>-->
+<!--                    </select>-->
+<!--                    <form id = "count_tasks_1" method="post" action="postuser/">-->
+<!--                        <label class = "label_count_tasks">-->
+<!--                            Количество задач-->
+<!--                            <input type="text" id = "input_count_tasks_1">-->
+<!--                        </label>-->
+<!--                        </label>-->
+<!--                    </form>-->
+<!--                </div>-->
+<!--                <div id="button__add-topic-One">-->
+<!--                    <button type="button" name="add" value="Click" onmousedown="viewDivTwo()"><img src="{% static 'main/img/plus.png' %}" style="vertical-align: middle" >Добавить тему</button>-->
+<!--                </div>-->
+<!--            </div>-->
+
+<!--        </div>-->
+<!--    </div>-->
+<!--</body>-->
+<!--</html>-->

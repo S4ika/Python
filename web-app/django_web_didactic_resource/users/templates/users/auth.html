@@ -1,0 +1,38 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Регистрация</title>
+  <link rel="stylesheet" href="{% static 'users/css/auth.css' %}">
+</head>
+<body>
+    <div class="form">
+      <div class="tab-content">
+        <div id="signup">
+          <h1>Авторизация</h1>
+          <form action="/" method="post">
+          <div class="top-row">
+            <div class="field-wrap">
+              <label id = "label_login">
+                Логин<span class="req">*</span>
+              </label>
+              <input type="text" required autocomplete="off"  />
+            </div>
+            </div>
+
+          <div class="field-wrap">
+            <label id = "label_pas">
+              Пароль<span class="req">*</span>
+            </label>
+            <input type="password"required autocomplete="off" id='pass_word'/>
+          </div>
+
+
+          <button type="submit" class="button button-block"/>Зарегистрироваться</button>
+          </form>
+        </div> <!-- /form -->
+        </div>
+      </div>
+</body>
+</html>

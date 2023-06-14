@@ -1,0 +1,197 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Создать набор задач</title>
+    <link rel="stylesheet" href="{% static 'main/css/create_tasks.css' %}">
+    <script src="{% static 'main/js/main_js.js'%}"></script>
+    <script src="{% static 'main/js/jquery-3.7.0.js'%}"></script>
+<!--    <script>-->
+<!--        function viewDivTwo(){-->
+<!--            document.getElementById("choose_theme_two").style.display = "flex";-->
+<!--            document.getElementById("button__add-topic-One").style.display = "none";-->
+<!--            document.getElementById("button__add-topic-Two").style.display = "block";-->
+
+<!--            document.getElementById("button__delete-topic-Two").style.display = "block";-->
+<!--          };-->
+<!--          function viewDivThree(){-->
+<!--            document.getElementById("choose_theme_three").style.display = "flex";-->
+<!--            document.getElementById("button__add-topic-Two").style.display = "none";-->
+<!--            document.getElementById("button__add-topic-Three").style.display = 'block';-->
+
+<!--            document.getElementById("button__delete-topic-Two").style.display = 'none';-->
+<!--            document.getElementById("button__delete-topic-Three").style.display = 'block';-->
+<!--          };-->
+<!--          function viewDivFour(){-->
+<!--            document.getElementById("choose_theme_four").style.display = "flex";-->
+<!--            document.getElementById("button__add-topic-Three").style.display = "none";-->
+
+
+<!--            document.getElementById("button__delete-topic-Three").style.display = "none";-->
+<!--            document.getElementById("button__delete-topic-Four").style.display = "block";-->
+<!--          };-->
+
+
+
+
+<!--          function viewDeleteTwo(){-->
+<!--            document.getElementById("choose_theme_two").style.display = "none";-->
+<!--            document.getElementById("button__add-topic-Three").style.display = "none";-->
+<!--            document.getElementById("button__add-topic-One").style.display = "block";-->
+<!--            document.getElementById("button__add-topic-Two").style.display = "none";-->
+
+<!--            document.getElementById("button__delete-topic-Two").style.display = 'none';-->
+<!--          };-->
+
+<!--          function viewDeleteThree(){-->
+<!--            document.getElementById("choose_theme_three").style.display = "none";-->
+<!--            document.getElementById("button__add-topic-Three").style.display = "none";-->
+<!--            document.getElementById("button__delete-topic-Three").style.display = 'none';-->
+
+<!--            document.getElementById("button__add-topic-Two").style.display = "block";-->
+<!--            document.getElementById("button__delete-topic-Two").style.display = 'block';-->
+<!--          };-->
+
+<!--          function viewDeleteFour(){-->
+<!--            document.getElementById("choose_theme_four").style.display = "none";-->
+<!--            document.getElementById("button__delete-topic-Four").style.display = 'none';-->
+
+<!--            document.getElementById("button__add-topic-Three").style.display = "block";-->
+<!--            document.getElementById("button__delete-topic-Three").style.display = 'block';-->
+<!--          };-->
+<!--    </script>-->
+</head>
+<body>
+    <div id = "header">
+            <div id = "logo"><img src="{% static 'main/img/img.png' %}" width="50" height="50" alt="Иконка учителя"></div>
+            <div id = "header_icon_title"><p>Учительская</p></div>
+            <div id = "main_title"><a href="{% url 'home' %}" class = "header_words">Главная страница</a></div>
+            <div id = "create_tasks"><a href="{% url 'create_tasks' %}" class = "header_words">Создать набор задач</a></div>
+            <div id = "all_tasks"><a href="{% url 'all_tasks' %}" class = "header_words">Все задачи</a></div>
+            <div id = "cabinet"><a href="{% url 'account' %}" class = "header_words">Личный кабинет</a></div>
+    </div>
+    <div id = "white_background">
+        <div id = "main_field">
+            <div id = "form_task_options">
+                <form id = "num_of_task_options" action="/header" method="post">
+<!--                    {% csrf_token %}>-->
+                    <label>
+                        Введите количество вариантов
+                        <input type="text" id = "task_options_area">
+                    </label>
+                </form>
+            </div>
+            <div id = "form_FIO">
+                <form id = "input_FIO">
+                    <label>
+                        Введите ФИО ученика
+                        <input type="text" id = "input_FIO_area" placeholder="Это поле может быть пустым">
+                    </label>
+                    </label>
+                </form>
+            </div>
+
+            <div class="theme_one">
+                <div id = "choose_theme">
+                    <p class = "theme">Тема</p>
+                    <select name="choose_theme_dropbox" id = "1_dropbox">
+                      <option value="Давление"selected>Давление</option>
+                      <option value="Мощность" >Мощность</option>
+                      <option value="Кинематика">Кинематика</option>
+                      <option value="Электродинамика">Электродинамика</option>
+                    </select>
+                    <form id = "count_tasks_1" method="post" action="postuser/">
+                        <label class = "label_count_tasks">
+                            Количество задач
+                            <input type="text" id = "input_count_tasks_1">
+                        </label>
+                        </label>
+                    </form>
+                </div>
+                <div id="button__add-topic-One">
+                    <button type="button" name="add" value="Click" onmousedown="viewDivTwo()"><img src="{% static 'main/img/plus.png' %}" style="vertical-align: middle" >Добавить тему</button>
+                </div>
+            </div>
+
+            <div class="theme_two">
+                <div id = "choose_theme_two">
+                    <p class = "theme">Тема</p>
+                    <select name="choose_theme_dropbox" id = "2_dropbox">
+                      <option value="Давление"selected>Давление</option>
+                      <option value="Мощность" >Мощность</option>
+                      <option value="Кинематика">Кинематика</option>
+                      <option value="Электродинамика">Электродинамика</option>
+                    </select>
+                    <form id = "count_tasks_2">
+                        <label class = "label_count_tasks">
+                            Количество задач
+                            <input type="text" id = "input_count_tasks_2">
+                        </label>
+                        </label>
+                    </form>
+                </div>
+                <div id="button__add-topic-Two">
+                    <button type="button" name="add" value="Click" onmousedown="viewDivThree()"><img src="{% static 'main/img/plus.png' %}" style="vertical-align: middle" >Добавить тему</button>
+                </div>
+                <div id="button__delete-topic-Two">
+                    <button type="button" name="delete" value="Click" onmousedown="viewDeleteTwo()">Удалить тему</button>
+                </div>
+            </div>
+
+            <div class="theme_three">
+                <div id = "choose_theme_three">
+                    <p class = "theme">Тема</p>
+                    <select name="choose_theme_dropbox" id = "3_dropbox">
+                      <option value="Давление"selected>Давление</option>
+                      <option value="Мощность" >Мощность</option>
+                      <option value="Кинематика">Кинематика</option>
+                      <option value="Электродинамика">Электродинамика</option>
+                    </select>
+                    <form id = "count_tasks_3">
+                        <label class = "label_count_tasks">
+                            Количество задач
+                            <input type="text" id = "input_count_tasks_3">
+                        </label>
+                        </label>
+                    </form>
+                </div>
+                <div id="button__add-topic-Three">
+                    <button type="button" name="add" value="Click" onmousedown="viewDivFour()"><img src="{% static 'main/img/plus.png' %}" style="vertical-align: middle" >Добавить тему</button>
+                </div>
+                <div id="button__delete-topic-Three">
+                    <button type="button" name="delete" value="Click" onmousedown="viewDeleteThree()">Удалить тему</button>
+                </div>
+            </div>
+
+            <div class="theme_four">
+                <div id = "choose_theme_four">
+                    <p class = "theme">Тема</p>
+                    <select name="choose_theme_dropbox" id = "4_dropbox">
+                      <option value="Давление"selected>Давление</option>
+                      <option value="Мощность" >Мощность</option>
+                      <option value="Кинематика">Кинематика</option>
+                      <option value="Электродинамика">Электродинамика</option>
+                    </select>
+                    <form id = "count_tasks_4">
+                        <label class = "label_count_tasks">
+                            Количество задач
+                            <input type="text" id = "input_count_tasks_4">
+                        </label>
+                        </label>
+                    </form>
+                </div>
+
+                <div id="button__delete-topic-Four">
+                    <button type="button" name="delete" value="Click" onmousedown="viewDeleteFour()">Удалить тему</button>
+                </div>
+            </div>
+
+            <div id="button_print">
+                <button type="submit" name="print" value="Click" id = "butt_generate" onclick="button_click_generate()">Сгенерировать набор задач</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
