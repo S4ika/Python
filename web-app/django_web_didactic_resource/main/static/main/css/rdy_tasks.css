@@ -1,0 +1,77 @@
+#header{
+    display: flex;
+    height: 80px;
+    width: 1260px;
+    background-color: #37B6CE;
+    border-radius: 10px;
+    font-weight: bold;
+}
+
+#logo{
+    margin: 10px 15px;
+}
+
+#header_icon_title{
+    font-size: 20px;
+    margin-top: 10px;
+}
+
+#main_title{
+    color:whitesmoke;
+    margin: 20px 0px 0px 200px;
+    width: 70px;
+    height: 50px;
+    text-align: center;
+}
+.header_words{
+    color: #fff;
+    text-decoration: none;
+}
+
+#create_tasks{
+    color:whitesmoke;
+    margin: 20px 0px 0px 200px;
+    width: 90px;
+    height: 50px;
+    text-align: center;
+}
+
+#all_tasks{
+    color:whitesmoke;
+    margin: 20px 0px 0px 150px;
+    width: 70px;
+    height: 50px;
+    text-align: center;
+}
+
+#cabinet{
+    color:whitesmoke;
+    margin: 20px 0px 0px 150px;
+    width: 70px;
+    height: 50px;
+    text-align: center;
+}
+
+#white_background{
+    background-color: white;
+}
+
+#main_field{
+    background-color: #37B6CE;
+    margin: 55px 100px;
+    width: 900 px;
+    height:400 px;
+    border-radius: 50px;
+}
+
+#load_button{
+    background-color: #F4BA64;
+    border-radius: 5px;
+    border-color: #F4BA64;
+    font-size: 17px;
+}
+
+.task{
+    background-color: #F4BA64;
+    border-color: #F4BA64;
+}

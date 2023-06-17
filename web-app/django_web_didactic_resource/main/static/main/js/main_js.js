@@ -68,7 +68,7 @@
                     var count_var = document.getElementById('task_options_area').value;
                     if (count_var != "" && document.getElementById('input_FIO_area').value != ""){
                         alert("Выберите что-то одно из общего задания и индивидуального");
-                        return;
+
                     }
                     if (count_var != ""){
                         site_mapping.set('count_var', count_var);
@@ -79,10 +79,11 @@
                     }
                     else{
                         alert("Вы забыли заполнить поля ФИО/Кол-во вариантов");
-                        return;
+
                     }
                     var iter = get_count_create_db();
                     var i = 1;
+
                     while(i <= iter){
                         var i_str = String(i);
                         var theme_select = document.getElementById(i_str + '_dropbox');
@@ -91,27 +92,52 @@
                         if (document.getElementById('input_count_tasks_'+ i_str).value != "")
                         {
                             var count_task = document.getElementById('input_count_tasks_'+ i_str).value;
+                            site_mapping.set(theme, count_task);
                         }
                         else {
                             alert("Введите необходимое количество задач.");
-                            return;
+
                         }
-                        site_mapping.set(theme, count_task);
+
                         i = i + 1;
                     }
 
-                    button_print.onsubmit = async (e) => {
-                    e.preventDefault();
+                    var the_cockoo = ""
+                    for (const [key, value] of site_mapping) {
+                        console.log(key,value)
+                        if (key == "Давление"){
+                            document.querySelector('#pressure').value = value;
+                        }
+                        else if (key == "Мощность"){
+                            document.querySelector('#power').value = value;
+                        }
+                        else if (key == "Кинематика") {
+                            document.querySelector('#kinematic').value = value;
+                        }
+                        else if (key == "Электродинамика") {
+                            document.querySelector('#electro').value = value;
+                        }
+                        else{
+                            document.querySelector('#var_or_fio').value = value;
+                        }
 
-                    let response = await fetch('/article/formdata/post/user', {
-                      method: 'POST',
-                      body: new FormData(formElem)
-                    });
+                    }
 
-                    let result = await response.json();
+                    document.getElementById("send_dic").click();
+};
 
-                    alert(result.message);
-                  };
+//                    button_print.onsubmit = async (e) => {
+//                    e.preventDefault();
+//
+//                    let response = await fetch('/article/formdata/post/user', {
+//                      method: 'POST',
+//                      body: new FormData(formElem)
+//                    });
+//
+//                    let result = await response.json();
+//
+//                    alert(result.message);
+
 //                    $.ajax({
 //                      type: "POST",
 //                      url: "/generated_tasks",
@@ -137,4 +163,3 @@
 //                    document.getElementById('butt_generate').innerHTML="Вы ввели : "+ site_mapping.get('4_dropbox');
 //                      site_mapping.forEach((value, key) => alert(key +" " + value));
 //)
-                };

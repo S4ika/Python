@@ -89,7 +89,6 @@
                         Введите ФИО ученика
                         <input type="text" id = "input_FIO_area" placeholder="Это поле может быть пустым">
                     </label>
-                    </label>
                 </form>
             </div>
 
@@ -107,7 +106,7 @@
                             Количество задач
                             <input type="text" id = "input_count_tasks_1">
                         </label>
-                        </label>
+
                     </form>
                 </div>
                 <div id="button__add-topic-One">
@@ -128,7 +127,6 @@
                         <label class = "label_count_tasks">
                             Количество задач
                             <input type="text" id = "input_count_tasks_2">
-                        </label>
                         </label>
                     </form>
                 </div>
@@ -154,7 +152,7 @@
                             Количество задач
                             <input type="text" id = "input_count_tasks_3">
                         </label>
-                        </label>
+
                     </form>
                 </div>
                 <div id="button__add-topic-Three">
@@ -179,7 +177,7 @@
                             Количество задач
                             <input type="text" id = "input_count_tasks_4">
                         </label>
-                        </label>
+
                     </form>
                 </div>
 
@@ -188,10 +186,23 @@
                 </div>
             </div>
 
-            <div id="button_print">
+                <div class="all_themes" hidden >
+                    <form id = "theme_and_tasks" method = "post" action = "add/">
+                        {% csrf_token %}
+<!--                        <textarea id = "theme_tsk" name="theme_tasks" cols="40" rows="3"></textarea>-->
+                        <p><input id="var_or_fio" type="text" name="v_fio_input" ></p>
+                        <p><input id="kinematic" type="text" name="kin_input"></p>
+                        <p><input id="electro" type="text" name="elec_input"></p>
+                        <p><input id="power" type="text" name="pow_input"></p>
+                        <p><input id="pressure" type="text" name="press_input"></p>
+                        <input id = "send_dic" type="submit" value="Отправить">
+                    </form>
+                </div>
+            <div id="button__print">
                 <button type="submit" name="print" value="Click" id = "butt_generate" onclick="button_click_generate()">Сгенерировать набор задач</button>
             </div>
         </div>
     </div>
+
 </body>
 </html>

@@ -23,5 +23,5 @@ from django.conf.urls.static import static
 urlpatterns = [
     path('admin/', admin.site.urls),#Админская страница
     path('', include('main.urls')), #Главная страница
-    path('auth/', include('users.urls')) #Авторизация
+    path('auth/', include('users.urls')), #Авторизация
 ]+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

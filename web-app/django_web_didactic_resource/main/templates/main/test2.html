@@ -1,0 +1,109 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Сгенерировать задачу</title>
+    <link rel="stylesheet" href="{% static 'main/css/kid_create_tasks.css' %}">
+    <script src="{% static 'main/js/main_js.js'%}"></script>
+    <script src="{% static 'main/js/jquery-3.7.0.js'%}"></script>
+<!--    <script>-->
+<!--        function viewDivTwo(){-->
+<!--            document.getElementById("choose_theme_two").style.display = "flex";-->
+<!--            document.getElementById("button__add-topic-One").style.display = "none";-->
+<!--            document.getElementById("button__add-topic-Two").style.display = "block";-->
+
+<!--            document.getElementById("button__delete-topic-Two").style.display = "block";-->
+<!--          };-->
+<!--          function viewDivThree(){-->
+<!--            document.getElementById("choose_theme_three").style.display = "flex";-->
+<!--            document.getElementById("button__add-topic-Two").style.display = "none";-->
+<!--            document.getElementById("button__add-topic-Three").style.display = 'block';-->
+
+<!--            document.getElementById("button__delete-topic-Two").style.display = 'none';-->
+<!--            document.getElementById("button__delete-topic-Three").style.display = 'block';-->
+<!--          };-->
+<!--          function viewDivFour(){-->
+<!--            document.getElementById("choose_theme_four").style.display = "flex";-->
+<!--            document.getElementById("button__add-topic-Three").style.display = "none";-->
+
+
+<!--            document.getElementById("button__delete-topic-Three").style.display = "none";-->
+<!--            document.getElementById("button__delete-topic-Four").style.display = "block";-->
+<!--          };-->
+
+
+
+
+<!--          function viewDeleteTwo(){-->
+<!--            document.getElementById("choose_theme_two").style.display = "none";-->
+<!--            document.getElementById("button__add-topic-Three").style.display = "none";-->
+<!--            document.getElementById("button__add-topic-One").style.display = "block";-->
+<!--            document.getElementById("button__add-topic-Two").style.display = "none";-->
+
+<!--            document.getElementById("button__delete-topic-Two").style.display = 'none';-->
+<!--          };-->
+
+<!--          function viewDeleteThree(){-->
+<!--            document.getElementById("choose_theme_three").style.display = "none";-->
+<!--            document.getElementById("button__add-topic-Three").style.display = "none";-->
+<!--            document.getElementById("button__delete-topic-Three").style.display = 'none';-->
+
+<!--            document.getElementById("button__add-topic-Two").style.display = "block";-->
+<!--            document.getElementById("button__delete-topic-Two").style.display = 'block';-->
+<!--          };-->
+
+<!--          function viewDeleteFour(){-->
+<!--            document.getElementById("choose_theme_four").style.display = "none";-->
+<!--            document.getElementById("button__delete-topic-Four").style.display = 'none';-->
+
+<!--            document.getElementById("button__add-topic-Three").style.display = "block";-->
+<!--            document.getElementById("button__delete-topic-Three").style.display = 'block';-->
+<!--          };-->
+<!--    </script>-->
+</head>
+<body>
+    <div id = "header">
+            <div id = "logo"><img src="{% static 'main/img/children.png' %}" width="50" height="50" alt="Иконка ученика"></div>
+            <div id = "header_icon_title"><p>Комната школьника</p></div>
+            <div id = "main_title"><a href="{% url 'home' %}" class = "header_words">Главная страница</a></div>
+            <div id = "create_tasks"><a href="{% url 'create_tasks' %}" class = "header_words">Создать набор задач</a></div>
+            <div id = "cabinet"><a href="{% url 'account' %}" class = "header_words">Личный кабинет</a></div>
+    </div>
+    <div id = "white_background">
+        <div id = "main_field">
+            <form class="theme_one">
+                {% csrf_token %}
+                <p class = "theme">Тема</p>
+                <select name="choose_theme_dropbox" id = "1_dropbox">
+                    <option value="Давление" selected>Давление</option>
+                    <option value="Мощность" >Мощность</option>
+                    <option value="Кинематика">Кинематика</option>
+                    <option value="Электродинамика">Электродинамика</option>
+                </select>
+                <input type="submit" value="Сгенерировать задачу" />
+
+            </form>
+            {% for elem in task_shablons %}
+                  <div class = "">
+                      <p>{{ elem }}</p>
+                  </div>
+
+        {% endfor %}
+            <div id = "answer_form">
+                <form id = "answer">
+<!--                    {% csrf_token %}>-->
+                    <label id = "input_answ">
+                        Введите ответ :
+                        <input type="text" id = "task_options_area">
+                    </label>
+                    <div>
+                    <button id = "check_answer">Проверить</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -107,6 +107,8 @@ input[type="text"]::-moz-placeholder {
     justify-content: space-around;
     padding: 35px 0px 0px 26px;
 }
+
+
 /*Не забудь поменять цвет как нбудь на дропбокс*/
 #choose_name_dropbox{
     margin-left: 135px;
@@ -215,7 +217,7 @@ option:not(:checked) {
 
   /*--------------------- Choose theme -----------------*/
 
-  #choose_theme_two, #choose_theme_three, #choose_theme_four {
+  #choose_theme_two, #choose_theme_three, #choose_theme_four, #all_themes {
     display: none;
     justify-content: space-around;
     padding: 35px 0px 0px 26px;

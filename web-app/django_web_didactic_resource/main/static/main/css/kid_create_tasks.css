@@ -117,7 +117,7 @@ select option[value1] {
   }
 option:not(:checked) {
     background-color: #37B6CE;
-  }
+}
 
 
 
@@ -151,7 +151,10 @@ option:not(:checked) {
   }
 
 .theme{
-    font-size: 23px;
+    font-size: 20px;
+    display: inline-block;
+    margin-left: 275px;
+    margin-right: 100px;
 }
 
 #gener_task{
@@ -165,7 +168,15 @@ option:not(:checked) {
     font-size: 20px;
 }
 
- #check_answer{
+#gen_task{
+    margin-left:10px;
+    background-color: #F4BA64;
+    border-radius: 5px;
+    border-color: #F4BA64;
+    font-size: 20px;
+}
+
+#check_answer{
     background-color: #F4BA64;
     border-radius: 5px;
     border-color: #F4BA64;
@@ -178,4 +189,24 @@ option:not(:checked) {
 
  #snail{
     text-color: red;
+ }
+
+ #head_main_field{
+    display: flex;
+ }
+
+ #theme_one{
+    margin-left: 50px 15px 0px 0px;
+ }
+
+ #1_dropbox{
+    margin-right: 25px;
+ }
+
+ #upload_tasks{
+    margin-left: 50 px;
+ }
+
+ #theme_one{
+    margin: 50px 0px 50px 0px;
  }

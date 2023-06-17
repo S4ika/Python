@@ -4,64 +4,11 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Создать набор задач</title>
+    <title>Сгенерировать задачу</title>
     <link rel="stylesheet" href="{% static 'main/css/kid_create_tasks.css' %}">
-    <script src="{% static 'main/js/main_js.js'%}"></script>
+    <script src="{% static 'main/js/kid_c_t.js'%}"></script>
     <script src="{% static 'main/js/jquery-3.7.0.js'%}"></script>
-<!--    <script>-->
-<!--        function viewDivTwo(){-->
-<!--            document.getElementById("choose_theme_two").style.display = "flex";-->
-<!--            document.getElementById("button__add-topic-One").style.display = "none";-->
-<!--            document.getElementById("button__add-topic-Two").style.display = "block";-->
 
-<!--            document.getElementById("button__delete-topic-Two").style.display = "block";-->
-<!--          };-->
-<!--          function viewDivThree(){-->
-<!--            document.getElementById("choose_theme_three").style.display = "flex";-->
-<!--            document.getElementById("button__add-topic-Two").style.display = "none";-->
-<!--            document.getElementById("button__add-topic-Three").style.display = 'block';-->
-
-<!--            document.getElementById("button__delete-topic-Two").style.display = 'none';-->
-<!--            document.getElementById("button__delete-topic-Three").style.display = 'block';-->
-<!--          };-->
-<!--          function viewDivFour(){-->
-<!--            document.getElementById("choose_theme_four").style.display = "flex";-->
-<!--            document.getElementById("button__add-topic-Three").style.display = "none";-->
-
-
-<!--            document.getElementById("button__delete-topic-Three").style.display = "none";-->
-<!--            document.getElementById("button__delete-topic-Four").style.display = "block";-->
-<!--          };-->
-
-
-
-
-<!--          function viewDeleteTwo(){-->
-<!--            document.getElementById("choose_theme_two").style.display = "none";-->
-<!--            document.getElementById("button__add-topic-Three").style.display = "none";-->
-<!--            document.getElementById("button__add-topic-One").style.display = "block";-->
-<!--            document.getElementById("button__add-topic-Two").style.display = "none";-->
-
-<!--            document.getElementById("button__delete-topic-Two").style.display = 'none';-->
-<!--          };-->
-
-<!--          function viewDeleteThree(){-->
-<!--            document.getElementById("choose_theme_three").style.display = "none";-->
-<!--            document.getElementById("button__add-topic-Three").style.display = "none";-->
-<!--            document.getElementById("button__delete-topic-Three").style.display = 'none';-->
-
-<!--            document.getElementById("button__add-topic-Two").style.display = "block";-->
-<!--            document.getElementById("button__delete-topic-Two").style.display = 'block';-->
-<!--          };-->
-
-<!--          function viewDeleteFour(){-->
-<!--            document.getElementById("choose_theme_four").style.display = "none";-->
-<!--            document.getElementById("button__delete-topic-Four").style.display = 'none';-->
-
-<!--            document.getElementById("button__add-topic-Three").style.display = "block";-->
-<!--            document.getElementById("button__delete-topic-Three").style.display = 'block';-->
-<!--          };-->
-<!--    </script>-->
 </head>
 <body>
     <div id = "header">
@@ -73,31 +20,44 @@
     </div>
     <div id = "white_background">
         <div id = "main_field">
-            <form class="theme_one">
-                {% csrf_token %}
-                <p class = "theme">Тема</p>
-                <select name="choose_theme_dropbox" id = "1_dropbox">
-                    <option value="Давление" selected>Давление</option>
-                    <option value="Мощность" >Мощность</option>
-                    <option value="Кинематика">Кинематика</option>
-                    <option value="Электродинамика">Электродинамика</option>
-                </select>
-                <input type="submit" value="Сгенерировать задачу" />
+            <div class = "theme_one">
+<!--                <div class="theme_one">-->
+<!--                    <p class = "theme">Тема</p>-->
+<!--                    <select name="choose_theme_dropbox" id = "1_dropbox">-->
+<!--                        <option value="Давление" selected>Давление</option>-->
+<!--                        <option value="Мощность" >Мощность</option>-->
+<!--                        <option value="Кинематика">Кинематика</option>-->
+<!--                        <option value="Электродинамика">Электродинамика</option>-->
+<!--                    </select>-->
+<!--                    <input type="button" id = "butt_generate" value="Сгенерировать задачу" onclick="button_click_generate_task_for_kid()"/>-->
+<!--                </div>-->
+                    <p class = "theme">Тема</p>
+                    <select name="choose_theme_dropbox" id = "1_dropbox">
+                        <option value="Давление" selected>Давление</option>
+                        <option value="Мощность" >Мощность</option>
+                        <option value="Кинематика">Кинематика</option>
+                        <option value="Электродинамика">Электродинамика</option>
+                   </select>
+                <input type="button" id = "butt_generate" value="Сгенерировать задачу" onclick="button_click_generate_task_for_kid()"/>
+                <input type="button" id = "butt_answer" value="Помощь" onclick="button_click_answ_for_kid()"/>
 
-            </form>
+            </div>
             <div>
-                <p id = "gener_task">Вычислите время за которое Муравей, преодолеет 400 м со скоростью 38 см/с.
+                <p id = "answr_and_frml">
+
+                </p>
+                <p id = "gener_task">
+                    Вычислите время за которое муравей преодолеет 375 м со скоростью 17 см/с.
                     </p>
             </div>
             <div id = "answer_form">
                 <form id = "answer">
-<!--                    {% csrf_token %}>-->
                     <label id = "input_answ">
                         Введите ответ :
                         <input type="text" id = "task_options_area">
                     </label>
                     <div>
-                    <button id = "check_answer">Проверить</button>
+                    <button type = "button" id = "check_answer" onclick="check_answ()">Проверить</button>
                     </div>
                 </form>
             </div>

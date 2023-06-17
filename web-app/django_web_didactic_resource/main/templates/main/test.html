@@ -12,33 +12,33 @@
 	<div class="mar10-tb"><label>Телефон: <input name="phone"></label></div>
 	<div><button id = "my_button" type="submit">Отправить</button></div>
 </form>
-
+<div> {{ task_shablon }} </div>
 <div id="my_message"></div>
 
 </body></html>
 <script>
-$(document).ready(function() {
-    $("#my_button").click(function(e) {
-    	e.preventDefault();
-        $.ajax({
-            url: "{% url "my_view" %}}",
-            method: 'post',
-            dataType: 'json',
-            success: function(data) {
-                // Обработка полученных данных
-                alert(data);
-            }
-            error: function(response) {
-              alert("Пиздос");
-            }
-            complete: function() {
-        	// и по завершении запроса (удачном или нет)
-        		alert("Я закончил!");
-    		}
-            }
-        });
-    });
-});
+<!--$(document).ready(function() {-->
+<!--    $("#my_button").click(function(e) {-->
+<!--    	e.preventDefault();-->
+<!--        $.ajax({-->
+<!--            url: "{% url "my_view" %}}",-->
+<!--            method: 'post',-->
+<!--            dataType: 'json',-->
+<!--            success: function(data) {-->
+<!--                // Обработка полученных данных-->
+<!--                alert(data);-->
+<!--            }-->
+<!--            error: function(response) {-->
+<!--              alert("Пиздос");-->
+<!--            }-->
+<!--            complete: function() {-->
+<!--        	// и по завершении запроса (удачном или нет)-->
+<!--        		alert("Я закончил!");-->
+<!--    		}-->
+<!--            }-->
+<!--        });-->
+<!--    });-->
+<!--});-->
 <!--1-->
 
 <!--	var servResponse = document.querySelector('#my_message');-->

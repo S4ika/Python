@@ -1,0 +1,35 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Сгенерировать задачу</title>
+    <link rel="stylesheet" href="{% static 'main/css/kid_create_tasks.css' %}">
+    <script src="{% static 'main/js/kid_c_t.js'%}"></script>
+    <script src="{% static 'main/js/jquery-3.7.0.js'%}"></script>
+
+</head>
+<body>
+    <div id = "header">
+            <div id = "logo"><img src="{% static 'main/img/children.png' %}" width="50" height="50" alt="Иконка ученика"></div>
+            <div id = "header_icon_title"><p>Учительская</p></div>
+            <div id = "main_title"><a href="{% url 'home' %}" class = "header_words">Главная страница</a></div>
+            <div id = "create_tasks"><a href="{% url 'create_tasks' %}" class = "header_words">Создать набор задач</a></div>
+            <div id = "cabinet"><a href="{% url 'account' %}" class = "header_words">Личный кабинет</a></div>
+    </div>
+    <div id = "white_background">
+        <div id = "main_field">
+            <div class = "uploads">
+                    <p class = "upload_tasks"><a class = "upload_tasks" href= 'C:/Users/sn41l/Desktop/2023-06-17 00-42-35.DOCX' download>Скачать файл с заданиями</a>
+                    <p class = "upload_tasks"><a class = "upload_tasks" href=  'main/static/main/files_f_gen/Answers 2023-06-17 00-42-36.docx'  download>Скачать файл с ответами</a>
+                </div>
+            <div>
+                <p id = "gener_task">
+                    </p>
+            </div>
+
+        </div>
+    </div>
+</body>
+</html>
